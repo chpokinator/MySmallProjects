@@ -1,0 +1,332 @@
+﻿<views:MvxWpfView 
+    
+    
+    x:Class="MvxStarter.Wpf.Views.NextViews.EditEmployeeView"
+    
+             xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+             xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MvxStarter.Wpf.Views.NextViews"
+             xmlns:z="clr-namespace:MvxStarter.Wpf.Service"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1500"
+    
+    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:viewmodels="clr-namespace:HRProgram.Core.ViewModels;assembly=HRProgram.Core"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    
+    
+    
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+    
+    
+    >
+
+    <views:MvxWpfView.Resources>
+        
+        <z:ToBitmapConverter x:Key="myBitmapConverter"/>
+        
+    </views:MvxWpfView.Resources>
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="83*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+
+            <Button Grid.Row="0"
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    Margin="5"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Right"
+  Panel.ZIndex="1"
+  Command="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.ReturnCommand}"
+  >
+                <materialDesign:PackIcon
+    Kind="Close"
+    Height="25"
+    Width="25" />
+            </Button>
+
+            <Button Grid.Row="0"
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    Margin="5"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Right"
+  Panel.ZIndex="1"
+  Command="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.AcceptCommand}"
+  >
+                <materialDesign:PackIcon
+    Kind="Check"
+    Height="25"
+    Width="25" />
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="285,0" Width="930">
+
+            
+                <materialDesign:Card
+                    
+                    Margin="5"
+  Background="{DynamicResource MaterialDesignCardBackground}"
+  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Width="300"
+  Padding="10"
+  UniformCornerRadius="15">
+
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center"
+    TextWrapping="Wrap"
+    Text="Резюме" />
+
+                        <ComboBox
+                            ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summaries, UpdateSourceTrigger=PropertyChanged}"
+                            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.SelectedSummary, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                            ></ComboBox>
+                        
+                    </Grid>
+
+
+                </materialDesign:Card>
+            
+
+            
+                <materialDesign:Card
+                    
+                    Margin="5"
+  Background="{DynamicResource MaterialDesignCardBackground}"
+  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Width="300"
+  Padding="10"
+  UniformCornerRadius="15">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center"
+    TextWrapping="Wrap"
+    Text="Должность" />
+
+                        <ComboBox
+                            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                            ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Positions, UpdateSourceTrigger=PropertyChanged}"
+                            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.SelectedPosition, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            ></ComboBox>
+
+                    </Grid>
+                </materialDesign:Card>
+            
+
+
+            
+                <materialDesign:Card
+                    
+                    Margin="5"
+  Background="{DynamicResource MaterialDesignCardBackground}"
+  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+  Width="300"
+  Padding="10"
+  UniformCornerRadius="15">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center"
+    TextWrapping="Wrap"
+    Text="Статус" />
+
+                        <ComboBox
+                            Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                            ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Statuses, UpdateSourceTrigger=PropertyChanged}"
+                            SelectedItem="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.SelectedStatus, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            ></ComboBox>
+
+                    </Grid>
+                </materialDesign:Card>
+            
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" HorizontalAlignment="Left" Margin="15,15,0,15" Width="1400">
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="ФИО" />
+
+            <TextBox Margin="5"
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="280"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  Height="70"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Employee.Fullname, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+            <Grid>
+            
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Дети" />
+
+            
+
+
+                <Slider Margin="5"
+  Width="350"
+  Value="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Employee.Children, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+  Minimum="0"
+  Maximum="20"
+  Style="{StaticResource MaterialDesignDiscreteSlider}"
+  TickFrequency="1"
+  TickPlacement="TopLeft"
+                HorizontalAlignment="Left"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <TextBlock 
+                        VerticalAlignment="Center"
+                        Margin="5"
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Дата рождения:" />
+
+
+                    <DatePicker HorizontalAlignment="Left" Margin="5"
+  Width="140"
+  SelectedDate="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Employee.Birthday, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+  Style="{StaticResource MaterialDesignOutlinedDatePicker}" />
+
+                </StackPanel>
+                
+                
+            </Grid>
+            
+
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Зарплата" />
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <TextBox
+                        Margin="5"
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    VerticalAlignment="Top"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    MaxWidth="400"
+    materialDesign:HintAssist.Hint="Максимум"
+    Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.MaxValueSalary, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+     />
+                </StackPanel>
+
+                <StackPanel>
+                    <TextBox
+                        Margin="5"
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    VerticalAlignment="Top"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    MaxWidth="400"
+    materialDesign:HintAssist.Hint="Шаг"
+    Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.SalaryStep, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+     />
+                </StackPanel>
+
+            </StackPanel>
+            
+            <Slider Margin="5"
+  Width="550"
+  Value="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Employee.Salary, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+  Minimum="0"
+  Maximum="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.MaxValueSalary, UpdateSourceTrigger=PropertyChanged}"
+  Style="{StaticResource MaterialDesignDiscreteSlider}"
+  TickFrequency="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.SalaryStep, UpdateSourceTrigger=PropertyChanged}"
+  TickPlacement="TopLeft"
+                HorizontalAlignment="Left"/>
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Премия" />
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel  Margin="5">
+                    <TextBox
+                        
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    VerticalAlignment="Top"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    MaxWidth="400"
+    materialDesign:HintAssist.Hint="Максимум"
+    Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.MaxValuePremium, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+     />
+                </StackPanel>
+
+                <StackPanel  Margin="5">
+                    <TextBox
+                        
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    VerticalAlignment="Top"
+    AcceptsReturn="True"
+    TextWrapping="Wrap"
+    MaxWidth="400"
+    materialDesign:HintAssist.Hint="Шаг"
+                        Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.PremiumStep, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+     />
+                </StackPanel>
+
+            </StackPanel>
+
+            <Slider Margin="5"
+  Width="550"
+  Value="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Employee.Premium, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+  Minimum="0"
+  Maximum="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.MaxValuePremium, UpdateSourceTrigger=PropertyChanged}"
+  Style="{StaticResource MaterialDesignDiscreteSlider}"
+  TickFrequency="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.PremiumStep, UpdateSourceTrigger=PropertyChanged}"
+  TickPlacement="TopLeft"
+                HorizontalAlignment="Left"/>
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Фото" />
+
+            <StackPanel Orientation="Horizontal">
+                
+
+                <!--<Button
+  Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+  Click="ChooseButtonClick">
+                    <materialDesign:PackIcon
+    Kind="Alarm"/>
+                </Button>-->
+
+                <Button
+                    Margin="10"
+  Style="{StaticResource MaterialDesignRaisedAccentButton}"
+                    Height="50"
+                    Width="250"
+  Click="ChooseButtonClick"
+  Content="Выбрать" />
+
+            </StackPanel>
+
+            
+
+        </StackPanel>
+
+
+
+    </Grid>
+</views:MvxWpfView>

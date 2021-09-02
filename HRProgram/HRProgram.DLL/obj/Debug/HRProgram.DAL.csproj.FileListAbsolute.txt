@@ -1,0 +1,12 @@
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\HRProgram.DLL.dll.config
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\HRProgram.DLL.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\HRProgram.DLL.pdb
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\EntityFramework.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\EntityFramework.xml
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\obj\Debug\HRProgram.DAL.csprojAssemblyReference.cache
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\obj\Debug\HRProgram.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\obj\Debug\HRProgram.DAL.csproj.CopyComplete
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\obj\Debug\HRProgram.DLL.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.DLL\obj\Debug\HRProgram.DLL.pdb

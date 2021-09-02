@@ -1,0 +1,17 @@
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.BLL.dll.config
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.BLL.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.BLL.pdb
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\AutoMapper.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\AutoMapper.xml
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\obj\Debug\HRProgram.BLL.csprojAssemblyReference.cache
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\obj\Debug\HRProgram.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\obj\Debug\HRProgram.BLL.csproj.CopyComplete
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\obj\Debug\HRProgram.BLL.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\obj\Debug\HRProgram.BLL.pdb
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.DLL.dll
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.DLL.pdb
+C:\Users\Computer\source\repos\HRProgram\HRProgram.BLL\bin\Debug\HRProgram.DLL.dll.config

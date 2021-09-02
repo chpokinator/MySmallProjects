@@ -1,0 +1,193 @@
+﻿<views:MvxWpfView 
+    
+    x:Class="MvxStarter.Wpf.Views.NextViews.SummaryEditView"
+             xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+    xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MvxStarter.Wpf.Views.NextViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1510"
+    
+    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:viewmodels="clr-namespace:HRProgram.Core.ViewModels;assembly=HRProgram.Core"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    
+    
+    
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+    
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47*"></RowDefinition>
+            <RowDefinition Height="353*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Orientation="Horizontal">
+
+            <Button Grid.Row="0"
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    Margin="5"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Right"
+  Panel.ZIndex="1"
+  Command="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.ReturnCommand}"
+  >
+                <materialDesign:PackIcon
+    Kind="Close"
+    Height="25"
+    Width="25" />
+            </Button>
+
+            <Button Grid.Row="0"
+  Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    Margin="5"
+  VerticalAlignment="Top"
+  HorizontalAlignment="Right"
+  Panel.ZIndex="1"
+  Command="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.AcceptCommand}"
+  >
+                <materialDesign:PackIcon
+    Kind="Check"
+    Height="25"
+    Width="25" />
+            </Button>
+
+        </StackPanel>
+
+
+        <ComboBox Grid.Row="0"
+                                
+                                Margin="5"
+  Style="{StaticResource MaterialDesignOutlinedComboBox}"
+  materialDesign:HintAssist.Hint="Профессия"
+  ItemsSource="{Binding Positions, UpdateSourceTrigger=PropertyChanged}"
+  SelectedItem="{Binding SelectedPosition, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+  materialDesign:TextFieldAssist.HasClearButton="True"
+  Width="300"></ComboBox>
+
+        <ListView Grid.Row="1"
+                  Margin="15">
+
+
+            
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="ФИО" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="280"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="45"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.Fullname, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Контактная информация" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="400"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="60"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.ContactInfo, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Опыт работы" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="500"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="80"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.Experience, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Обучение" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="500"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="80"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.Education, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Умения" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="500"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="90"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.Skills, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+
+            <TextBlock
+  Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+  Text="Рекомендации" />
+
+            <TextBox
+  TextWrapping="Wrap"
+  VerticalAlignment="Stretch"
+  MinWidth="500"
+  AcceptsReturn="True"
+  VerticalScrollBarVisibility="Auto"
+  SpellCheck.IsEnabled="True"
+  
+  Height="90"
+                MaxWidth="1400"
+                FontSize="16"
+  Text="{Binding RelativeSource={RelativeSource AncestorType=views:MvxWpfView, Mode=FindAncestor}, Path=DataContext.Summary.Recommendations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+
+        </ListView>
+        
+        
+    </Grid>
+</views:MvxWpfView>
