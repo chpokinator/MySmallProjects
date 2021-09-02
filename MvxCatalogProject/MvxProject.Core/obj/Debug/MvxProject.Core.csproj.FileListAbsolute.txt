@@ -1,0 +1,2 @@
+C:\Users\Computer\source\repos\MvxCatalogProject\MvxProject.Core\obj\Debug\MvxProject.Core.csprojAssemblyReference.cache
+C:\Users\Computer\source\repos\MvxCatalogProject\MvxProject.Core\obj\Debug\MvxProject.Core.csproj.CoreCompileInputs.cache

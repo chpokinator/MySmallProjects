@@ -1,0 +1,118 @@
+﻿<views:MvxWpfView
+    xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+    xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf" 
+    x:Class="MvxStarter.Wpf.Views.NextViews.EditCarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:loc="clr-namespace:MvxStarter.Wpf.Properties"
+             xmlns:local="clr-namespace:MvxStarter.Wpf.Views.NextViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <views:MvxWpfView.Resources>
+        <!--A Style that affects all TextBlocks-->
+
+
+
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+        </Style>
+
+    </views:MvxWpfView.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="127*"></RowDefinition>
+            <RowDefinition Height="23*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <WrapPanel HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="5"
+                   Grid.Row="1">
+            <Button Width="100"
+                    Margin="5"
+                    Height="45"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Content="{x:Static loc:Resources.Close}"
+                    mvx:Bi.nd="Command CloseCommand"
+                    ></Button>
+        </WrapPanel>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Margin="10" Grid.Row="0" Grid.Column="0">
+                <DockPanel Margin="5">
+                    <TextBlock Text="{x:Static loc:Resources.Title}"></TextBlock>
+                    <TextBox Margin="5"
+                             Text="{Binding SelectedCar.Title}"></TextBox>
+                </DockPanel>
+                <DockPanel Margin="5">
+                    <TextBlock Text="{x:Static loc:Resources.Model}"></TextBlock>
+                    <TextBox Margin="5"
+                             Text="{Binding SelectedCar.Model}"></TextBox>
+                </DockPanel>
+                <DockPanel Margin="5">
+                    <TextBlock Text="{x:Static loc:Resources.Engine}"></TextBlock>
+                    <TextBox Margin="5"
+                             Text="{Binding SelectedCar.Engine}"></TextBox>
+                </DockPanel>
+                <DockPanel Margin="5">
+                    <TextBlock Text="{x:Static loc:Resources.Desc}"></TextBlock>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                                  HorizontalScrollBarVisibility="Disabled">
+                        <TextBox Margin="5"
+                                 MaxHeight="80"
+                                 TextWrapping="WrapWithOverflow"
+                                 AcceptsReturn="True"
+                             Text="{Binding SelectedCar.Description}"></TextBox>
+                    </ScrollViewer>
+
+                </DockPanel>
+                <DockPanel Margin="5">
+                    <TextBlock Text="{x:Static loc:Resources.Link}"></TextBlock>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                                  HorizontalScrollBarVisibility="Disabled">
+                        <TextBox Margin="5"
+                             Name="link"
+                             MaxHeight="65"
+                             Text="{Binding SelectedCar.Photo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             TextWrapping="WrapWithOverflow"/>
+                    </ScrollViewer>
+                </DockPanel>
+
+                <Button x:Name="ChooseButton"
+                        HorizontalAlignment="Right"
+                        Width="90"
+                        Height="28"
+                        Margin="5"
+                        FontWeight="Bold"
+                        Click="ChooseButton_Click"
+                        Content="{x:Static loc:Resources.Choose}"></Button>
+
+            </StackPanel>
+
+            <Image Grid.Column="1"
+                   Grid.Row="0"
+                   Margin="10"
+                   Height="250"
+                   VerticalAlignment="Top"
+                   Source="{Binding ElementName=link, Path=Text, UpdateSourceTrigger=PropertyChanged}"></Image>
+
+        </Grid>
+
+    </Grid>
+</views:MvxWpfView>
