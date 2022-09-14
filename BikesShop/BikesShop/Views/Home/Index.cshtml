@@ -1,0 +1,34 @@
+﻿@model BikesShop.Models.ViewModels.BikesListViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="d-flex mb-2">
+    <input id="searchText" type="text" class="form-control mr-2" />
+    <button id="search" class="btn btn-primary">Search</button>
+    
+</div>
+
+@*@await Html.PartialAsync("BikesList", Model)*@
+<div class="d-flex flex-row  justify-content-center align-content-center">
+    <a class="btn btn-primary mr-2" id="byTitle">Title</a>
+    <a class="btn btn-primary mr-2" id="byPrice">Price</a>
+    <select id="color" name="color" asp-items="Model.Colors" class="custom-select mr-2"></select>
+    <select id="material" name="material" asp-items="Model.Materials" class="custom-select mr-2"></select>
+    <button class="btn btn-primary" id="filter">Filter</button>
+</div>
+
+<div id="bikes-list">
+    @*@await Html.PartialAsync("BikesList", Model)*@
+</div>
+
+
+@*<div class="d-flex justify-content-center">
+    @{
+        for (int i = 1; i <= ViewBag.Pages; i++)
+        {
+            <a href="~/Home/Index/?page=@i" class="btn btn-primary mr-2">@i</a>
+        }
+    }
+</div>*@

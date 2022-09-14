@@ -1,0 +1,38 @@
+﻿@model BikesShop.Models.ViewModels.CartIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cart</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Count</th>
+            <th>Title</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+        <tr>
+            <td>@line.Count</td>
+            <td>@line.Bike.Title</td>
+            <td>@line.Bike.Price</td>
+            <td>@(line.Count * line.Bike.Price)</td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total: </td>
+            <td>@Model.Cart.ComputeTotalValue()</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p class="btn btn-danger">
+    <a href="@Model.ReturnUrl">Continue shopping</a>
+</p>

@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Bike
+<form method="post" class="form-group" enctype="multipart/form-data">
+    @Html.HiddenFor(x => x.BikeId)
+    <div class="d-flex gap m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.Title)</div>
+    </div>
+    <div class="d-flex m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.Price)
+        @Html.TextBoxFor(x => x.Price, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.Price)</div>
+    </div>
+    <div class="d-flex  m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.Color)
+        @Html.TextBoxFor(x => x.Color, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.Color)</div>
+    </div>
+    <div class="d-flex  m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.Material)
+        @Html.TextBoxFor(x => x.Material, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.Material)</div>
+    </div>
+    <div class="d-flex  m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.WheelSize)
+        @Html.TextBoxFor(x => x.WheelSize, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.WheelSize)</div>
+    </div>
+    <div class="d-flex  m-2" style="gap:0.5em">
+        @Html.LabelFor(x => x.Info)
+        @Html.TextBoxFor(x => x.Info, new { @class = "input-group" })
+        <div class="invalid">@Html.ValidationMessageFor(x => x.Info)</div>
+    </div>
+    <div class="d-flex m-2" style="gap:0.5em">
+        @Html.LabelFor(x=> x.Photo)
+        <input type="file" name="uploadFile"/>
+    </div>
+    <input type="submit" class="btn btn-danger" value="Create" />
+</form>

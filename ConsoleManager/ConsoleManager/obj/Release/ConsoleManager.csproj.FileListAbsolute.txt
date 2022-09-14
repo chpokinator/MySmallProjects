@@ -1,0 +1,7 @@
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\bin\Release\ConsoleManager.exe.config
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\bin\Release\ConsoleManager.exe
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\bin\Release\ConsoleManager.pdb
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\obj\Release\ConsoleManager.csprojAssemblyReference.cache
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\obj\Release\ConsoleManager.csproj.CoreCompileInputs.cache
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\obj\Release\ConsoleManager.exe
+C:\Users\Adhshba\source\repos\ConsoleManager\ConsoleManager\obj\Release\ConsoleManager.pdb

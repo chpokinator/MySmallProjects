@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Bike
+@{
+   
+}
+
+<div class="col-10 d-flex flex-column">
+    <h3 class="align-self-center">Dear Customer, you're going to order this:</h3>
+    <div class="d-flex flex-row card">
+        <div>
+            <h2>@Model.Title</h2>
+            <h2>Price: @Model.Price</h2>
+        </div>
+    </div>
+    <form method="post" name="result" class="form-group">
+        <input type="hidden" value="@Model.BikeId" name="BikeId"  />
+        <div>
+            <label>Name: </label>
+            <input type="text" name="Name" class="input-group" />
+        </div>
+        <div>
+            <label>Email: </label>
+            <input type="text" name="Email" class="input-group" />
+        </div>
+        <div>
+            <label>Lastname: </label>
+            <input type="text" name="Lastname" class="input-group" />
+        </div>
+        <div>
+            <label>Count</label>
+            <input type="number" min="1" name="Count" class="input-group" /> 
+        </div>
+
+        <input type="submit" value="Send" class="btn btn-danger mt-2" />
+    </form>
+</div>

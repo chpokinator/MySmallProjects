@@ -1,0 +1,18 @@
+﻿@model Customer
+
+<form method="post">
+    <input type="hidden" value="@Model.Id" name="id" />
+    <div class="d-flex flex-column">
+        <label>Email</label>
+        <input type="email" value="@Model.Email" name="email" />
+    </div>
+    <div class="d-flex flex-column">
+        <label>User name</label>
+        <input type="text" value="@Model.UserName" name="name" />
+    </div>
+    <div class="d-flex flex-column">
+        <label>Password</label>
+        <input type="password" name="password" />
+    </div>
+    <input type="submit" value="Save" />
+</form>

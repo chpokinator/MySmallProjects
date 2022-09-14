@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <div id="errors" class="alert alert-danger" style="display:none;"></div>
+
+        <form name="editBikeForm" enctype="multipart/form-data">
+            <input type="hidden" name="bikeId" value="0" />
+            <div class="form-group">
+                <label for="title">Title: </label>
+                <input type="text" name="title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price: </label>
+                <input type="number" name="price" min="0" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="wheelsize">Wheelsize: </label>
+                <input type="number" name="wheelsize" min="0" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="info">Info: </label>
+                <input type="text" name="info" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="color">Color: </label>
+                <input type="text" name="color" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="material">Material: </label>
+                <input type="text" name="material" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="file">Photo:</label>
+                <input type="file" name="file" />
+
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="js/bikeEdit.js"></script>
+
+</body>
+</html>
